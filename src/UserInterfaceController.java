@@ -10,7 +10,7 @@ public class UserInterfaceController {
 
         CanvasCallback cc = new CanvasCallback(this.ui.getPanel());
         CanvasWorker cw = new CanvasWorker(cc);
-
-        cw.start();
+        Thread canvasThread = new Thread(cw);
+        canvasThread.start();
     }
 }

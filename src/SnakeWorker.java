@@ -1,7 +1,7 @@
 /**
  * Created by admin on 27.02.2017.
  */
-public class SnakeWorker extends Thread {
+public class SnakeWorker implements Runnable {
 
     private boolean isRunning = true;
     private int frameTime = 1000;

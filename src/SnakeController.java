@@ -12,9 +12,10 @@ public class SnakeController {
         this.snake = snake;
 
         SnakeCallback sc = new SnakeCallback(this);
-        this.snakeWorker = new SnakeWorker(sc);
 
-        this.snakeWorker.start();
+        this.snakeWorker = new SnakeWorker(sc);
+        Thread snakeThread = new Thread(this.snakeWorker);
+        snakeThread.start();
     }
 
     public void growSnake() {
