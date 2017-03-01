@@ -23,16 +23,18 @@ public class SnakeController {
     }
 
     public void moveSnake() {
-        this.snake.setY(this.snake.getY()+1);
+        Vector2D snakePos = this.snake.getPosition();
+        snakePos.setY(snakePos.getY()+1);
 
-        List<int[]> body = this.snake.getBody();
-        for(int i = 0; i < body.size()-1; i++) {
-            body.set(i, body.get(i+1));
+        SnakeBody body = this.snake.getBody();
+        List<int[]> bodyParts = body.getParts();
+        for(int i = 0; i < bodyParts.size()-1; i++) {
+            bodyParts.set(i, bodyParts.get(i+1));
         }
 
-        body.remove(body.size()-1);
-        body.add(this.snake.getPosition());
+        bodyParts.remove(bodyParts.size()-1);
+        bodyParts.add(this.snake.getPositionAsArray());
 
-        System.out.println("Snake is moving..." + this.snake.getY());
+        System.out.println("Snake is moving..." + snakePos.getY());
     }
 }
