@@ -15,10 +15,10 @@ public class Snake {
     public Snake() {
         Random rand = new Random();
         this.position = new Vector2D();
-        this.body = new SnakeBody(this.position);
 
         this.position.setX(rand.nextInt(Canvas.XFIELDS));
         this.position.setY(rand.nextInt(Canvas.YFIELDS));
+        this.body = new SnakeBody(this.position);
     }
 
     public Vector2D getPosition() {
