@@ -17,7 +17,7 @@ public class SnakeWorker implements Runnable {
     }
 
     public void setFrameTime() {
-        this.frameTime -= 500;
+        this.frameTime *= 0.95;
     }
 
     public void run() {

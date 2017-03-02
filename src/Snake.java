@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.List;
 import java.util.Random;
 
@@ -5,7 +6,7 @@ import java.util.Random;
  * Created by admin on 27.02.2017.
  */
 public class Snake {
-
+    public static  final Color COLOR = Color.GRAY;
     public static final int BLOCKWIDTH = 10;
     public static final int BLOCKHEIGHT = 10;
 
@@ -33,16 +34,34 @@ public class Snake {
         return new int[]{this.position.getX(), this.position.getY()};
     }
 
-    public void eat() {
-        this.body.append(this.position);
+    public void eat(Food food) {
+        if(this.collides(food)) {
+            this.body.append(this.position);
+            food.setLocation();
+        }
+    }
+
+    public boolean collides(Food food) {
+        Vector2D foodPosition = food.getPosition();
+
+        if(this.position.getX() == foodPosition.getX() && this.position.getY() == foodPosition.getY()) {
+            return true;
+        }
+
+        return false;
     }
 
     public boolean intersects(Food food) {
-        boolean isIntersecting = false;
+        List<int[]> body = this.body.getParts();
+        Vector2D foodPosition = food.getPosition();
 
-        //List<int[]> body = this.body.getParts();
+        for(int[] b : body) {
+            if(b[0] == foodPosition.getX() && b[1] == foodPosition.getY()) {
+                return true;
+            }
+        }
 
-        return isIntersecting;
+        return false;
     }
 
 }

@@ -9,17 +9,19 @@ public class SnakeController {
     private SnakeWorker snakeWorker;
 
     public SnakeController(Snake snake) {
-        this.snake = snake;
-
         SnakeCallback sc = new SnakeCallback(this);
 
+        this.snake = snake;
         this.snakeWorker = new SnakeWorker(sc);
         Thread snakeThread = new Thread(this.snakeWorker);
         snakeThread.start();
     }
 
     public void growSnake() {
-        snakeWorker.setFrameTime();
+
+        if(false) {
+            snakeWorker.setFrameTime();
+        }
     }
 
     public void moveSnake() {
