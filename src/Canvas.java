@@ -19,7 +19,9 @@ public class Canvas extends JPanel {
     public Canvas() {
         this.food = new Food();
         this.snake = new Snake();
-        this.snakeController = new SnakeController(snake);
+
+        this.food.setLocation(this.snake);
+        this.snakeController = new SnakeController(this.snake, this.food);
     }
 
     @Override
@@ -46,12 +48,12 @@ public class Canvas extends JPanel {
         g2d.fillRect(30+11*foodPosition.getX(), 30+11*foodPosition.getY(), Food.BLOCKWIDTH, Food.BLOCKHEIGHT);
 
         // draw snake
-        g2d.setPaint(Color.GRAY);
+        g2d.setPaint(Snake.COLOR);
         SnakeBody snakeBody = this.snake.getBody();
         List<int[]> body = snakeBody.getParts();
 
         for(int[] b: body) {
-            g2d.fillRect(30+11*b[0], 30+11*b[1] ,Snake.BLOCKWIDTH ,Snake.BLOCKHEIGHT);
+            g2d.fillRect(30+11*b[0], 30+11*b[1], Snake.BLOCKWIDTH ,Snake.BLOCKHEIGHT);
         }
     }
 }

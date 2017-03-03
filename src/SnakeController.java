@@ -5,12 +5,14 @@ import java.util.List;
  */
 public class SnakeController {
 
+    private Food food;
     private Snake snake;
     private SnakeWorker snakeWorker;
 
-    public SnakeController(Snake snake) {
+    public SnakeController(Snake snake, Food food) {
         SnakeCallback sc = new SnakeCallback(this);
 
+        this.food = food;
         this.snake = snake;
         this.snakeWorker = new SnakeWorker(sc);
         Thread snakeThread = new Thread(this.snakeWorker);
@@ -18,9 +20,13 @@ public class SnakeController {
     }
 
     public void growSnake() {
+        if(this.snake.collides(this.food)) {
+            SnakeBody snakeBody = this.snake.getBody();
 
-        if(false) {
             snakeWorker.setFrameTime();
+            snakeBody.append(this.snake.getPosition());
+
+            this.food.setLocation(this.snake);
         }
     }
 

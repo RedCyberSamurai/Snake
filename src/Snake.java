@@ -34,13 +34,6 @@ public class Snake {
         return new int[]{this.position.getX(), this.position.getY()};
     }
 
-    public void eat(Food food) {
-        if(this.collides(food)) {
-            this.body.append(this.position);
-            food.setLocation();
-        }
-    }
-
     public boolean collides(Food food) {
         Vector2D foodPosition = food.getPosition();
 

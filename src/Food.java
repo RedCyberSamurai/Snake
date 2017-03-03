@@ -14,14 +14,13 @@ public class Food {
 
     public Food() {
         this.rand = new Random();
-        this.setLocation();
     }
 
     public Vector2D getPosition() {
         return this.position;
     }
 
-    public void setLocation() {
+    public void setLocation(Snake snake) {
 
         this.position = new Vector2D(
                 this.rand.nextInt(Canvas.XFIELDS),
