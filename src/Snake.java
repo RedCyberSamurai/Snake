@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by admin on 27.02.2017.
  */
-public class Snake {
+public class Snake implements Controllable{
     public static  final Color COLOR = Color.GRAY;
     public static final int BLOCKWIDTH = 10;
     public static final int BLOCKHEIGHT = 10;
@@ -13,9 +13,12 @@ public class Snake {
     private Vector2D position;
     private SnakeBody body;
 
+    private Direction2D direction;
+
     public Snake() {
         Random rand = new Random();
         this.position = new Vector2D();
+        this.direction = new Direction2D();
 
         this.position.setX(rand.nextInt(Canvas.XFIELDS));
         this.position.setY(rand.nextInt(Canvas.YFIELDS));
@@ -57,4 +60,18 @@ public class Snake {
         return false;
     }
 
+    @Override
+    public void moveLeft() {
+        this.direction.setAim(Direction2D.Aim.BOTTOM);
+        // 1 2 4 8
+        // 0001
+        // 0010
+        // 0100
+        // 1000
+    }
+
+    @Override
+    public void moveRight() {
+
+    }
 }

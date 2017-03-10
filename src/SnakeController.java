@@ -9,12 +9,17 @@ public class SnakeController {
     private Snake snake;
     private SnakeWorker snakeWorker;
 
+    private Emittable emitter;
+
     public SnakeController(Snake snake, Food food) {
         SnakeCallback sc = new SnakeCallback(this);
 
         this.food = food;
         this.snake = snake;
         this.snakeWorker = new SnakeWorker(sc);
+
+        this.emitter = new Keyboard(this.snake);
+
         Thread snakeThread = new Thread(this.snakeWorker);
         snakeThread.start();
     }
@@ -32,7 +37,6 @@ public class SnakeController {
 
     public void moveSnake() {
         Vector2D snakePos = this.snake.getPosition();
-        snakePos.setY(snakePos.getY()+1);
 
         SnakeBody body = this.snake.getBody();
         List<int[]> bodyParts = body.getParts();
