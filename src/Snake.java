@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by admin on 27.02.2017.
  */
-public class Snake implements Controllable{
+public class Snake implements IControllable {
     public static  final Color COLOR = Color.GRAY;
     public static final int BLOCKWIDTH = 10;
     public static final int BLOCKHEIGHT = 10;

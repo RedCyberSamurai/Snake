@@ -4,10 +4,10 @@ import java.awt.event.KeyListener;
 /**
  * Created by admin on 10.03.2017.
  */
-public class Keyboard implements Emittable, KeyListener {
-    private Controllable player;
+public class Keyboard implements IEmittable, KeyListener {
+    private IControllable player;
 
-    public Keyboard(Controllable player) {
+    public Keyboard(IControllable player) {
         this.player = player;
     }
 

@@ -9,7 +9,7 @@ public class SnakeController {
     private Snake snake;
     private SnakeWorker snakeWorker;
 
-    private Emittable emitter;
+    private IEmittable emitter;
 
     public SnakeController(Snake snake, Food food) {
         SnakeCallback sc = new SnakeCallback(this);

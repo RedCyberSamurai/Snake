@@ -1,7 +1,7 @@
 /**
  * Created by admin on 27.02.2017.
  */
-public class SnakeCallback implements Callback {
+public class SnakeCallback implements ICallback {
 
     private SnakeController snakeController;
 

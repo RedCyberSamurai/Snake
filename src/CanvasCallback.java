@@ -3,7 +3,7 @@ import javax.swing.*;
 /**
  * Created by admin on 27.02.2017.
  */
-public class CanvasCallback implements Callback {
+public class CanvasCallback implements ICallback {
 
     private JPanel jPanel;
 
