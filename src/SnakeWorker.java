@@ -2,9 +2,9 @@
  * Created by admin on 27.02.2017.
  */
 public class SnakeWorker implements Runnable {
-
     private boolean isRunning = true;
     private int frameTime = 500;
+    private double decreaseTime = 0.8;
 
     private SnakeCallback snakeCallback;
 
@@ -17,7 +17,8 @@ public class SnakeWorker implements Runnable {
     }
 
     public void setFrameTime() {
-        this.frameTime *= 0.80;
+        this.frameTime *=  this.decreaseTime;
+        this.decreaseTime += (1 - this.decreaseTime) * 0.122;
     }
 
     public void run() {
