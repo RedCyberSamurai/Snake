@@ -58,7 +58,9 @@ public class Canvas extends JPanel {
         SnakeBody snakeBody = this.snake.getBody();
         List<int[]> body = snakeBody.getParts();
 
-        for(int[] b: body) {
+        int[] b;
+        for(int i = 0; i < body.size(); i++) {
+            b = body.get(i);
             g2d.fillRect(30+11*b[0], 30+11*b[1], Snake.BLOCKWIDTH ,Snake.BLOCKHEIGHT);
         }
     }
