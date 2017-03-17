@@ -56,8 +56,6 @@ public class SnakeController {
         Vector2D snakePos = this.snake.getPosition();
         byte snakeDirection = this.snake.getDirection();
 
-        System.out.println(snakeDirection);
-
         switch (snakeDirection) {
             case Direction2D.LOOK_UP:
                 snakePos.setY(snakePos.getY()-1);
