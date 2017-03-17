@@ -4,7 +4,7 @@
 public class SnakeWorker implements Runnable {
 
     private boolean isRunning = true;
-    private int frameTime = 1000;
+    private int frameTime = 500;
 
     private SnakeCallback snakeCallback;
 
@@ -17,7 +17,7 @@ public class SnakeWorker implements Runnable {
     }
 
     public void setFrameTime() {
-        this.frameTime *= 0.95;
+        this.frameTime *= 0.80;
     }
 
     public void run() {

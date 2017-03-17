@@ -37,6 +37,10 @@ public class Snake implements IControllable {
         return new int[]{this.position.getX(), this.position.getY()};
     }
 
+    public byte getDirection() {
+        return this.direction.getAim();
+    }
+
     public boolean collides(Food food) {
         Vector2D foodPosition = food.getPosition();
 
@@ -62,16 +66,11 @@ public class Snake implements IControllable {
 
     @Override
     public void moveLeft() {
-        this.direction.setAim(Direction2D.Aim.BOTTOM);
-        // 1 2 4 8
-        // 0001
-        // 0010
-        // 0100
-        // 1000
+        this.direction.setAim(Direction2D.Aim.LEFT);
     }
 
     @Override
     public void moveRight() {
-
+        this.direction.setAim(Direction2D.Aim.RIGHT);
     }
 }

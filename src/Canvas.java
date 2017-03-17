@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.util.List;
 
 /**
@@ -22,6 +23,11 @@ public class Canvas extends JPanel {
 
         this.food.setLocation(this.snake);
         this.snakeController = new SnakeController(this.snake, this.food);
+
+        // bind keylistener to panel
+        KeyListener kl = (KeyListener) snakeController.getEmitter();
+        this.addKeyListener(kl);
+        this.setFocusable(true);
     }
 
     @Override

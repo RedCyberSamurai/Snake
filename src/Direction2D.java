@@ -2,19 +2,35 @@
  * Created by admin on 10.03.2017.
  */
 public class Direction2D {
-    enum Aim { TOP, RIGHT, BOTTOM, LEFT }
+    enum Aim { RIGHT, LEFT }
 
-    private Aim currentDirection;
+    public final static byte LOOK_UP = 0;
+    public final static byte LOOK_RIGHT = 1;
+    public final static byte LOOK_DOWN = 2;
+    public final static byte LOOK_LEFT = 3;
+
+    private byte currentDirection;
+    private byte maxAim = 4;
 
     public Direction2D() {
-        currentDirection = Aim.BOTTOM;
+        currentDirection = 3;
     }
 
-    public Aim getAim() {
+    public byte getAim() {
         return this.currentDirection;
     }
 
     public void setAim(Aim aim) {
-        this.currentDirection = aim;
+        switch (aim) {
+            case LEFT:
+                this.currentDirection--;
+                break;
+            case RIGHT:
+                this.currentDirection++;
+                break;
+        }
+
+        this.currentDirection += this.maxAim;
+        this.currentDirection %= this.maxAim;
     }
 }

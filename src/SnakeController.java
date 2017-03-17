@@ -24,6 +24,10 @@ public class SnakeController {
         snakeThread.start();
     }
 
+    public IEmittable getEmitter() {
+        return this.emitter;
+    }
+
     public void growSnake() {
         if(this.snake.collides(this.food)) {
             SnakeBody snakeBody = this.snake.getBody();
@@ -36,7 +40,7 @@ public class SnakeController {
     }
 
     public void moveSnake() {
-        Vector2D snakePos = this.snake.getPosition();
+        this.positionSnakeHead();
 
         SnakeBody body = this.snake.getBody();
         List<int[]> bodyParts = body.getParts();
@@ -46,7 +50,27 @@ public class SnakeController {
 
         bodyParts.remove(bodyParts.size()-1);
         bodyParts.add(this.snake.getPositionAsArray());
+    }
 
-        System.out.println("Snake is moving..." + snakePos.getY());
+    private void positionSnakeHead() {
+        Vector2D snakePos = this.snake.getPosition();
+        byte snakeDirection = this.snake.getDirection();
+
+        System.out.println(snakeDirection);
+
+        switch (snakeDirection) {
+            case Direction2D.LOOK_UP:
+                snakePos.setY(snakePos.getY()-1);
+                break;
+            case Direction2D.LOOK_RIGHT:
+                snakePos.setX(snakePos.getX()+1);
+                break;
+            case Direction2D.LOOK_DOWN:
+                snakePos.setY(snakePos.getY()+1);
+                break;
+            case Direction2D.LOOK_LEFT:
+                snakePos.setX(snakePos.getX()-1);
+                break;
+        }
     }
 }
