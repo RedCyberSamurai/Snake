@@ -8,18 +8,23 @@ import java.util.List;
  */
 public class World extends JPanel {
 
-    public final static int WIDTH = 300;
-    public final static int HEIGHT = 400;
-    public final static int XFIELDS = 20;
-    public final static int YFIELDS = 25;
-
     private Food food;
     private Snake snake;
     private SnakeController snakeController;
 
+    private int width;
+    private int height;
+    private int xFields;
+    private int yFields;
+
     public World() {
-        this.food = new Food();
-        this.snake = new Snake();
+        this.width = 300;
+        this.height = 400;
+        this.xFields = 20;
+        this.yFields = 25;
+
+        this.food = new Food(this);
+        this.snake = new Snake(this);
 
         this.food.setLocation(this.snake);
         this.snakeController = new SnakeController(this.snake, this.food);
@@ -30,6 +35,38 @@ public class World extends JPanel {
         this.setFocusable(true);
     }
 
+    public int getWidth() {
+        return this.width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getXFields() {
+        return this.xFields;
+    }
+
+    public void setXFields(int xFields) {
+        this.xFields = xFields;
+    }
+
+    public int getYFields() {
+        return this.yFields;
+    }
+
+    public void setYFields(int yFields) {
+        this.yFields = yFields;
+    }
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -38,12 +75,12 @@ public class World extends JPanel {
 
         // draw background
         g2d.setPaint(Color.BLACK);
-        g2d.fillRect(0,0,WIDTH,HEIGHT);
+        g2d.fillRect(0,0,this.width,this.height);
 
         // draw fields
         g2d.setPaint(Color.WHITE);
-        for(int i = 0; i < XFIELDS; i++) {
-            for(int j = 0; j < YFIELDS;j++) {
+        for(int i = 0; i < this.xFields; i++) {
+            for(int j = 0; j < this.yFields; j++) {
                 g2d.fillRect(30+11*i, 30+11*j, Snake.BLOCKWIDTH, Snake.BLOCKHEIGHT);
             }
         }

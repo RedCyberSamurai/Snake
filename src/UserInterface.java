@@ -14,7 +14,7 @@ public class UserInterface extends JFrame {
 
         // TODO
         this.setTitle("Snake Game");
-        this.setSize(World.WIDTH, World.HEIGHT);
+        this.setSize(jPanel.getWidth(), jPanel.getHeight());
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

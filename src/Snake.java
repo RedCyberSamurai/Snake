@@ -14,15 +14,17 @@ public class Snake implements IControllable {
     private Vector2D position;
     private SnakeBody body;
 
+    private World world;
     private Direction2D direction;
 
-    public Snake() {
+    public Snake(World world) {
         Random rand = new Random();
         this.position = new Vector2D();
         this.direction = new Direction2D();
+        this.world = world;
 
-        this.position.setX(rand.nextInt(World.XFIELDS));
-        this.position.setY(rand.nextInt(World.YFIELDS));
+        this.position.setX(rand.nextInt(world.getXFields()));
+        this.position.setY(rand.nextInt(world.getYFields()));
         this.body = new SnakeBody(this.position);
     }
 
