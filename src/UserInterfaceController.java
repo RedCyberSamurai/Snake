@@ -10,7 +10,7 @@ public class UserInterfaceController {
 
         WorldCallback wc = new WorldCallback(this.ui.getPanel());
         WorldWorker ww = new WorldWorker(wc);
-        Thread canvasThread = new Thread(ww);
-        canvasThread.start();
+        Thread worldThread = new Thread(ww);
+        worldThread.start();
     }
 }
