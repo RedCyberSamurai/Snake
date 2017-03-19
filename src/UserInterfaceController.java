@@ -8,9 +8,9 @@ public class UserInterfaceController {
     public UserInterfaceController(UserInterface ui) {
         this.ui = ui;
 
-        CanvasCallback cc = new CanvasCallback(this.ui.getPanel());
-        CanvasWorker cw = new CanvasWorker(cc);
-        Thread canvasThread = new Thread(cw);
+        WorldCallback wc = new WorldCallback(this.ui.getPanel());
+        WorldWorker ww = new WorldWorker(wc);
+        Thread canvasThread = new Thread(ww);
         canvasThread.start();
     }
 }

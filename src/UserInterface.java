@@ -8,13 +8,13 @@ public class UserInterface extends JFrame {
     private JPanel jPanel;
 
     public UserInterface() {
-        jPanel = new Canvas();
+        jPanel = new World();
 
         this.add(jPanel);
 
         // TODO
         this.setTitle("Snake Game");
-        this.setSize(Canvas.WIDTH, Canvas.HEIGHT);
+        this.setSize(World.WIDTH, World.HEIGHT);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

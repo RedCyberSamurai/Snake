@@ -23,8 +23,8 @@ public class Food {
     public void setLocation(Snake snake) {
 
         this.position = new Vector2D(
-                this.rand.nextInt(Canvas.XFIELDS),
-                this.rand.nextInt(Canvas.YFIELDS)
+                this.rand.nextInt(World.XFIELDS),
+                this.rand.nextInt(World.YFIELDS)
         );
     }
 }

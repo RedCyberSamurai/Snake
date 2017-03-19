@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by admin on 27.02.2017.
  */
-public class Canvas extends JPanel {
+public class World extends JPanel {
 
     public final static int WIDTH = 300;
     public final static int HEIGHT = 400;
@@ -17,7 +17,7 @@ public class Canvas extends JPanel {
     private Snake snake;
     private SnakeController snakeController;
 
-    public Canvas() {
+    public World() {
         this.food = new Food();
         this.snake = new Snake();
 

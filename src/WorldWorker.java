@@ -1,15 +1,15 @@
 /**
  * Created by admin on 27.02.2017.
  */
-public class CanvasWorker implements Runnable {
+public class WorldWorker implements Runnable {
 
     private boolean isRunning = true;
     private int frameTime = 16;
 
-    private CanvasCallback canvasCallback;
+    private WorldCallback worldCallback;
 
-    public CanvasWorker(CanvasCallback canvasCallback) {
-        this.canvasCallback = canvasCallback;
+    public WorldWorker(WorldCallback worldCallback) {
+        this.worldCallback = worldCallback;
     }
 
     public void terminate() {
@@ -21,11 +21,11 @@ public class CanvasWorker implements Runnable {
         try {
             while(this.isRunning) {
                 Thread.sleep(this.frameTime);
-                this.canvasCallback.call();
+                this.worldCallback.call();
             }
 
         } catch (InterruptedException e) {
-            System.out.println("Canvas Worker Thread Error.");
+            System.out.println("World Worker Thread Error.");
             System.out.println(e.getMessage());
         }
     }

@@ -21,8 +21,8 @@ public class Snake implements IControllable {
         this.position = new Vector2D();
         this.direction = new Direction2D();
 
-        this.position.setX(rand.nextInt(Canvas.XFIELDS));
-        this.position.setY(rand.nextInt(Canvas.YFIELDS));
+        this.position.setX(rand.nextInt(World.XFIELDS));
+        this.position.setY(rand.nextInt(World.YFIELDS));
         this.body = new SnakeBody(this.position);
     }
 
