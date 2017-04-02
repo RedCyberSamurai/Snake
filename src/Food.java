@@ -15,6 +15,8 @@ public class Food {
     private World world;
 
     public Food(World world) {
+        this.position = new Vector2D();
+
         this.rand = new Random();
         this.world = world;
     }
@@ -24,10 +26,12 @@ public class Food {
     }
 
     public void setLocation(Snake snake) {
+        Vector2D snakePosition = snake.getPosition();
+        this.position.setX(this.rand.nextInt(world.getXFields()));
+        this.position.setY(this.rand.nextInt(world.getYFields()));
 
-        this.position = new Vector2D(
-                this.rand.nextInt(world.getXFields()),
-                this.rand.nextInt(world.getYFields())
-        );
+        if(snake.intersects(this)) {
+            this.setLocation(snake);
+        }
     }
 }
