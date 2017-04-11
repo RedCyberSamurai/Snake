@@ -1,3 +1,7 @@
+package de.redcybersamurai.snake.Worker;
+
+import de.redcybersamurai.snake.Callback.SnakeCallback;
+
 /**
  * Created by admin on 27.02.2017.
  */
@@ -30,7 +34,7 @@ public class SnakeWorker implements Runnable {
             }
 
         } catch (InterruptedException e) {
-            System.out.println("Snake Worker Thread error");
+            System.out.println("de.redcybersamurai.snake.Actor.Snake Worker Thread error");
             System.out.println(e.getMessage());
         }
     }

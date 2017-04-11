@@ -1,3 +1,5 @@
+package de.redcybersamurai.snake.Actor;
+
 /**
  * Created by admin on 10.03.2017.
  */

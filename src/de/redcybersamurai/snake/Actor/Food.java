@@ -1,3 +1,7 @@
+package de.redcybersamurai.snake.Actor;
+
+import de.redcybersamurai.snake.Actor.Property.Vector2D;
+
 import java.awt.*;
 import java.util.Random;
 

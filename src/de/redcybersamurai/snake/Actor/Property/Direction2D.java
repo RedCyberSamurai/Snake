@@ -1,8 +1,10 @@
+package de.redcybersamurai.snake.Actor.Property;
+
 /**
  * Created by admin on 10.03.2017.
  */
 public class Direction2D {
-    enum Aim { RIGHT, LEFT }
+    public enum Aim { RIGHT, LEFT }
 
     public final static byte LOOK_UP = 0;
     public final static byte LOOK_RIGHT = 1;

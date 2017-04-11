@@ -1,3 +1,8 @@
+package de.redcybersamurai.snake.Emitter;
+
+import de.redcybersamurai.snake.Actor.IControllable;
+import de.redcybersamurai.snake.Emitter.IEmittable;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;

@@ -1,3 +1,7 @@
+package de.redcybersamurai.snake.Worker;
+
+import de.redcybersamurai.snake.Callback.WorldCallback;
+
 /**
  * Created by admin on 27.02.2017.
  */
@@ -25,7 +29,7 @@ public class WorldWorker implements Runnable {
             }
 
         } catch (InterruptedException e) {
-            System.out.println("World Worker Thread Error.");
+            System.out.println("de.redcybersamurai.snake.Actor.World Worker Thread Error.");
             System.out.println(e.getMessage());
         }
     }

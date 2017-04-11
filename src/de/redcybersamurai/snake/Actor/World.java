@@ -1,3 +1,8 @@
+package de.redcybersamurai.snake.Actor;
+
+import de.redcybersamurai.snake.Controller.SnakeController;
+import de.redcybersamurai.snake.Actor.Property.Vector2D;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;

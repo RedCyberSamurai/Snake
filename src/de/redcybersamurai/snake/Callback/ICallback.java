@@ -1,3 +1,5 @@
+package de.redcybersamurai.snake.Callback;
+
 /**
  * Created by admin on 27.02.2017.
  */
